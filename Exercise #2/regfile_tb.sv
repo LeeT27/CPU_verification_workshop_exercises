@@ -8,6 +8,21 @@ module regfile_tb;
     logic [31:0] data;
     logic [31:0] rv1, rv2;
 
+    task automatic read_regfile (
+        input logic [31:0] rs1_s,
+        input logic [31:0] rs1_v,
+        input logic [31:0] rs2_s,
+        input logic [31:0] rs2_v
+    );
+        assign rs1 = rs1_s;
+        assign rs2 = rs2_s;
+        
+        assert (rv1 == rs1_v)
+            else $error("Read RS1 failed: Expected = %0x Actual = %0x", rs1_v, rv1);
+        assert (rv2 == rs1_v)
+            else $error("Read RS2 failed: Expected = %0x Actual = %0x", rs2_v, rv2);
+    endtask
+
     // Instantiate DUT
     regfile dut (
         .clk(clk),
