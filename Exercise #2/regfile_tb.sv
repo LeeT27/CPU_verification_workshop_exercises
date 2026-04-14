@@ -45,20 +45,21 @@ module regfile_tb;
         .rv2(rv2)
     );
 
+    initial begin : clock_initial
+        clk = 0;
+    end
     // Clock (10 time unit period)
-    always #5 clk = ~clk;
+    always begin : clock_generation
+        #5 clk = ~clk;
+    end
 
-    initial begin // Initialize 
+    initial begin  : test_vectors // Initialize 
         $dumpfile("regfile_tb.vcd");
         $dumpvars(0, regfile_tb);
-        clk = 0;
         //START WRITING CODE HERE
         
-        write_ctrl = ;
-        rs1 = ;
-        rs2 = ;
-        rd = ;
-        data = ;
+        read_regfile(4'b0000, 4'b0000, 32'b0, 32'b0);
+        
         #10; // 10ns delay 
 
         //Repeat the above lines for every signal change
