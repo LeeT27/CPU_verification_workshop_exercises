@@ -9,6 +9,14 @@ module regfile_tb;
     logic [31:0] rv1, rv2;
 
     task automatic read_regfile (
+    // inputs and output arguments
+    );
+        // TODO : drive rs1, rs2
+
+        // TODO : compare actual values against expected values
+    endtask
+
+    task automatic read_regfile (
         input logic [4:0] rs1_s,
         input logic [31:0] rs1_v,
         input logic [4:0] rs2_s,
