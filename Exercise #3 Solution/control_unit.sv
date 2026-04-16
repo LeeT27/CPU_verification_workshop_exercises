@@ -32,7 +32,7 @@ module control_unit (
 
                 case ({funct7_5, funct3})
                     4'b0000: alu_ctrl = 4'b0000; // add
-                    4'b1000: alu_ctrl = 4'b0000; // sub
+                    4'b1000: alu_ctrl = 4'b0001; // sub
                     4'b0111: alu_ctrl = 4'b0010; // and
                     4'b0110: alu_ctrl = 4'b0011; // or
                     4'b0100: alu_ctrl = 4'b0100; // xor
