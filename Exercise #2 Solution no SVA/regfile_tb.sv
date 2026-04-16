@@ -19,14 +19,15 @@ module regfile_tb;
         .rv1(rv1),
         .rv2(rv2)
     );
-
+    initial begin : clock_initial
+        clk = 0;
+    end
     // Clock (10 time unit period)
     always #5 clk = ~clk;
 
     initial begin // Initialize 
         $dumpfile("regfile_tb.vcd");
         $dumpvars(0, regfile_tb);
-        clk = 0;
         //START WRITING CODE HERE
         
         write_ctrl = 0;
