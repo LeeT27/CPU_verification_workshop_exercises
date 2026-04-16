@@ -8,6 +8,22 @@ module regfile_tb;
     logic [31:0] data;
     logic [31:0] rv1, rv2;
 
+    task automatic read_regfile (
+    // inputs and output arguments
+    );
+        // TODO : drive rs1, rs2
+
+        // TODO : compare actual values against expected values
+    endtask
+
+    task automatic write_regfile (
+    // inputs and output arguments
+    );
+        // TODO : drive rd_s
+
+        // TODO : compare actual values against expected values
+    endtask
+    
     // Instantiate DUT
     regfile dut (
         .clk(clk),
